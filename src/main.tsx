@@ -9,6 +9,8 @@ import { Menu } from './components/Menu/index.tsx'
 import { Post } from './components/Post/index.tsx'
 import { Redirect } from './components/Redirect/index.tsx'
 import { NotFound } from './components/NotFound/index.tsx'
+import { Nested } from './components/Nested/index.tsx'
+import { NestedContent } from './components/Nested/NestedContent/index.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -16,6 +18,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <Menu />
       <Routes>
         <Route path="/about" element={<About />} />
+        <Route path="/nested" element={<Nested />}>
+          <Route path=":id" element={<NestedContent />} />
+        </Route>
         <Route path="/posts/:id" element={<Post />} />
         <Route path="/posts" element={<Post />} />
         <Route path="/redirect" element={<Redirect />} />
