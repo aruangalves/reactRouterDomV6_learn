@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { About } from './templates/About/index.tsx'
 import { Menu } from './components/Menu/index.tsx'
 import { Post } from './components/Post/index.tsx'
+import { Redirect } from './components/Redirect/index.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -16,6 +17,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/about" element={<About />} />
         <Route path="/posts/:id" element={<Post />} />
         <Route path="/posts" element={<Post />} />
+        <Route path="/redirect" element={<Redirect />} />
         <Route path="/" element={<App />} />
       </Routes>
     </BrowserRouter>    
